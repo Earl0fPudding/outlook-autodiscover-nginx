@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-  <domain>weidenauer.cc</domain>
-  <displayname>Weidenauer Mail</displayname>
+  <domain>example.com</domain>
+  <displayname>Example Mail</displayname>
   <usePop>false</usePop> <!-- true if you use POP3, otherwise false -->
   <pop>
-    <server>mail.weidenauer.cc</server> <!-- POP3 server IP or address -->
+    <server>mail.example.com</server> <!-- POP3 server IP or address -->
     <port>110</port> <!-- 110 for unencrypted, 995 for encypted trafic -->
     <loginname>email</loginname> <!-- email for entire email+domain, username for the part before the @ character -->
     <encryption>none</encryption> <!-- none, ssl or starttls -->
@@ -12,18 +12,18 @@
   </pop>
   <useImap>true</useImap> <!-- true if you use IMAP, otherwise false -->
   <imap>
-    <server>mail.weidenauer.cc</server> <!-- IMAP server IP or address -->
+    <server>mail.example.com</server> <!-- IMAP server IP or address -->
     <port>993</port> <!-- 143 for unencrypted, 993 for encypted trafic (IMAPS) -->
     <loginname>email</loginname> <!-- email for entire email+domain, username for the part before the @ character -->
     <encryption>ssl</encryption> <!-- none, ssl or starttls -->
     <password>unencrypted</password> <!-- unencrypted or encrypted -->
   </imap>
   <smtp>
-    <server>mail.weidenauer.cc</server> <!-- SMTP server IP or address -->
+    <server>mail.example.com</server> <!-- SMTP server IP or address -->
     <port>587</port> <!-- 25 for unencrypted SMTP, 465 for encypted SMTP or 587 for submission -->
     <loginname>email</loginname> <!-- email for entire email+domain, username for the part before the @ character -->
     <encryption>starttls</encryption> <!-- none, ssl or starttls -->
     <password>unencrypted</password> <!-- unencrypted or encrypted -->
   </smtp>
-  <autodiscoverAddress>https://autoconfig.weidenauer.cc</autodiscoverAddress> <!-- the socket/virtual host which provides /autoconfig/autoconfig.xml -->
+  <autodiscoverAddress>https://autoconfig.example.com</autodiscoverAddress> <!-- the socket/virtual host which provides /autoconfig/autoconfig.xml -->
 </config>
