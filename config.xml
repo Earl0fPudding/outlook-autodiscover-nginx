@@ -2,6 +2,7 @@
 <config>
   <domain>example.com</domain>
   <displayname>Example Mail</displayname>
+  <displayshortname>Example</displayshortname>
   <usePop>false</usePop> <!-- true if you use POP3, otherwise false -->
   <pop>
     <server>mail.example.com</server> <!-- POP3 server IP or address -->
