@@ -51,6 +51,19 @@ server {
 5. Reload NGINX: `nginx -s reload`
 6. Done! You can check if everything is correct [here](https://testconnectivity.microsoft.com) or by doing a right click while holding CTRL on the Outlook icon in the taskbar and selecting "Email-Autodiscover test"
 
+## Thunderbird autoconfig
+This project also supports Thunderbird autoconfig. To activate it you have to add the following into the `server` block of the upper mentioned virtual host and change the PHP socket:
+```
+        location ~* ^/mail/config-v1.1.xml {
+            fastcgi_split_path_info ^(.+\.php)(/.+)$;
+            fastcgi_pass unix:/var/run/php/php7.3-fpm.sock; # change to your PHP socket
+            include /etc/nginx/fastcgi_params;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            try_files /autoconfig.php =404;
+        }
+```
+And then reload NGINX: `nginx -s reload`
+
 ## Other
 Some older versions of Outlook may use the so-called Guesssmart which basically tries every possible POP3, IMAP and SMTP combination to find the correct settings.
 This creates a lot of requests to the server, so please beware that you might have to adjust some anti-spam or anti-brute-force mechanisms on your server (e.g. fail2ban, ...).
